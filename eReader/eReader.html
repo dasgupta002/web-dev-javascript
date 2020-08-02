@@ -1,0 +1,146 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="dyca.css"></link>
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+<button class="js-go-day">DAY MODE</button>
+<button class="js-go-night">NIGHT MODE</button>
+<br>
+<hr>
+<div class="columns_left">
+<div class="nama">William Wordsworth</div>
+<hr>
+<div id="chapter0" class="chapter-thumbnail"><div class="pod">The Solitary Reaper</div>
+<br>
+Behold her, single in the field,<br>
+Yon solitary Highland Lass!<br>
+Reaping and singing by herself;<br>
+Stop here, or gently pass!<br>
+Alone she cuts and binds the grain,<br>
+And sings a melancholy strain;<br>
+O listen! for the Vale profound<br>
+Is overflowing with the sound.<br>
+<br>
+No Nightingale did ever chaunt<br>
+More welcome notes to weary bands<br>
+Of travellers in some shady haunt,<br>
+Among Arabian sands:<br>
+A voice so thrilling ne'er was heard<br>
+In spring-time from the Cuckoo-bird,<br>
+Breaking the silence of the seas<br>
+Among the farthest Hebrides.<br>
+<br>
+Will no one tell me what she sings?—<br>
+Perhaps the plaintive numbers flow<br>
+For old, unhappy, far-off things,<br>
+And battles long ago:<br>
+Or is it some more humble lay,<br>
+Familiar matter of to-day?<br>
+Some natural sorrow, loss, or pain,<br>
+That has been, and may be again?<br>
+<br>
+Whate'er the theme, the Maiden sang<br>
+As if her song could have no ending;<br>
+I saw her singing at her work,<br>
+And o'er the sickle bending;—<br>
+I listen'd, motionless and still;<br>
+And, as I mounted up the hill,<br>
+The music in my heart I bore,<br>
+Long after it was heard no more.<br>
+</div>
+<br>
+<div id="chapter1" class="chapter-thumbnail"><div class="pod">Lines Written in Early Spring</div>
+<br>
+I heard a thousand blended notes,<br>
+While in a grove I sate reclined,<br>
+In that sweet mood when pleasant thoughts<br>
+Bring sad thoughts to the mind.<br>
+<br>
+To her fair works did nature link<br>
+The human soul that through me ran;<br>
+And much it grieved my heart to think<br>
+What man has made of man.<br>
+<br>
+Through primrose tufts, in that sweet bower,<br>
+The periwinkle trailed its wreaths;<br>
+And 'tis my faith that every flower<br>
+Enjoys the air it breathes.<br>
+<br>
+The birds around me hopped and played:<br>
+Their thoughts I cannot measure,<br>
+But the least motion which they made,<br>
+It seemed a thrill of pleasure.<br>
+<br>
+The budding twigs spread out their fan,<br>
+To catch the breezy air;<br>
+And I must think, do all I can,<br>
+That there was pleasure there.<br>
+<br>
+If this belief from heaven be sent,<br>
+If such be Nature's holy plan,<br>
+Have I not reason to lament<br>
+What man has made of man?<br>
+</div>
+<br>
+<div id="chapter2" class="chapter-thumbnail"><div class="pod">Composed Upon Westminster Bridge, September 3, 1802</div>
+<br>
+Earth has not anything to show more fair:<br>
+Dull would he be of soul who could pass by<br>
+A sight so touching in its majesty:<br>
+This City now doth, like a garment, wear<br>
+The beauty of the morning; silent, bare,<br>
+Ships, towers, domes, theatres, and temples lie<br>
+Open unto the fields, and to the sky;<br>
+All bright and glittering in the smokeless air.<br>
+Never did sun more beautifully steep<br>
+In his first splendour, valley, rock, or hill;<br>
+Ne'er saw I, never felt, a calm so deep!<br>
+The river glideth at his own sweet will:<br>
+Dear God! the very houses seem asleep;<br>
+And all that mighty heart is lying still!<br>
+</div>
+</div>
+<div class="columns_right">
+<div id="mainViewer">
+William Wordsworth was an English Romantic poet who, with Samuel Taylor Coleridge,<br>
+helped to launch the Romantic Age in English literature with their joint publication<br>
+Lyrical Ballads.
+</div>
+</div>
+<script>
+  $('.js-go-night').click(function(){
+          $("body").css("background-color","black");
+          $("body").css("color","white");
+		});
+  $('.js-go-day').click(function(){
+          $("body").css("background-color","white");
+          $("body").css("color","black");
+		});
+  var counter = 0;
+  $(".chapter-thumbnail").click(function(){
+  				$("#mainViewer").html(
+  				$(this).html());
+          var id = $(this).attr("id");
+          counter = parseInt(id.slice(-1));
+  		});
+   $("#chapter"+counter).click();
+   $("#mainViewer").click(function (event){
+          if(event.offsetX < $(this).width()*0.5){
+  							counter = counter - 1;
+  			} else {
+  							counter = counter + 1;
+  			}
+          if(counter < 0){
+  				      counter =  $(".chapter-thumbnail").length-1;
+  			}
+          if(counter >= $(".chapter-thumbnail").length){
+  				      counter = 0;
+  			}
+          $("#chapter"+counter).click();
+  		});
+</script>
+</body>
+</html>

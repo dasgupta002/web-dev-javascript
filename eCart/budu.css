@@ -1,0 +1,72 @@
+.buddy{
+     background-color: lightgoldenrodyellow;
+}
+.lozanzo{
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     padding-top: 50px;
+     padding-bottom: 75px;
+     height: 350px;
+     width: 600px;
+}
+.sitename{
+     font-size: 40px;
+     font-family: monospace lucida;
+     word-spacing: 1180px;
+}
+.pill-nav a {
+     display: inline-block;
+     color: black;
+     text-align: center;
+     padding: 14px;
+     text-decoration: none;
+     font-size: 17px;
+     border-radius: 5px;
+}
+.pill-nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.pill-nav a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+.bottombar{
+    word-spacing: 35px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.dropbtn {
+    background-color: lightcoral;
+    color: white;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightcoral;
+    font-size: 15px;
+    max-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: blue;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}

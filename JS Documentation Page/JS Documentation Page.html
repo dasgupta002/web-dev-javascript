@@ -1,0 +1,178 @@
+<html>
+<head>
+<title>JS Documentation Page</title>
+<link rel="stylesheet" type="text/css" href="bla.css"></link>
+<script  src="https://code.jquery.com/jquery-3.5.1.js"
+         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+         crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="column_left">
+<div id="heading">JS Documentation</div>
+<br><br><hr>
+<div id="topic">
+<div class="what">What you should already know</div>
+<hr>
+<div class="java">JavaScript and Java</div>
+<hr>
+<div class="hello">Hello World</div>
+<hr>
+<div class="var">Variables</div>
+<hr>
+<div class="dec">Declaring Variables</div>
+<hr>
+<div class="scope">Variable scope</div>
+<hr>
+</div>
+</div>
+<div id="column_right">
+Introduction
+<br>
+<br>
+JavaScript is a cross-platform, object-oriented scripting
+language. It is a small and lightweight language. Inside a host
+environment(for example, a web browser), JavaScript can be
+connected to the objects of its environment to provide
+programmatic control over them.
+JavaScript contains a standard library of objects, such as
+Array, Date, Math and a core set of language elements such as
+operators, control structures and statements. Core JavaScript
+can be extended for a variety of purposes by supplementing it
+with additional objects.<br>
+Objects in JavaScript, just as in many other programming languages,
+can be compared to objects in real life. The concept of objects in
+JavaScript can be understood with real life, tangible objects.
+In JavaScript, an object is a standalone entity, with properties
+and type. Compare it with a cup, for example. A cup is an object,
+with properties. A cup has a color, a design, weight, a material
+it is made of, etc. The same way, JavaScript objects can have
+properties, which define their characteristics.
+</div>
+<div class="you">
+What you should already know<br><br>
+No doubt about it–JavaScript is absolutely essential for any
+web developer. Gone are the days when you could get by with a
+little CSS and HTML.
+JavaScript has only three primitive data types: String, Number,
+and Boolean. Everything else (if it’s not null or undefined)
+can have properties added to it.
+More and more languages are getting support for treating
+functions as values, but depending on your background this
+may not be at all familiar to you.
+Developers coming from a Java or C# background are used to
+so-called “foreach” loops, which iterate over all the values
+in a collection. JavaScript doesn’t (currently) have an
+equivalent loop.
+All developers, in every language, should avoid using global
+variables. But it’s easy to do by accident in Javascript
+because nobody’s forcing you to organize your code into modules.
+</div>
+<div class="and">
+JavaScript and Java<br><br>
+Both Java and JavaScript are written, assembled and executed
+differently, and each has dramatic differences when it comes
+to what it is capable of doing. Java is used in a wide range
+of places, including Android apps, credit card programming
+and in the creation of desktop applications and web enterprise
+applications. By comparison, JavaScript is mainly used to make
+web pages more interactive. It can be used as an alternative
+to Flash, though most programmers will tell you that JavaScript
+is more popular and has more functionality than Flash.
+JavaScript can be used to do neat things like creating
+animation in HTML.In a nutshell, when it comes to how each
+language is used, Java is typically used for all server side
+development, while JavaScript is reserved for developing
+client side scripts for functions like validation and
+interactivity. There are some other key differences:<br>
+<ul>
+<li>Java code must be compiled, and JavaScript code is
+all-text.
+<li>JavaScript code is run on a browser only, while Java
+creates applications that run in a virtual machine or browser.
+<li>Java is an OOP (object-oriented programming) language, and
+JavaScript is specifically an OOP scripting language.
+</ul>
+</div>
+<div class="world">
+Hello World<br><br>
+This part of the tutorial is about core JavaScript, the
+language itself. But we need a working environment to run
+our scripts and, since this book is online, the browser is
+a good choice. We’ll keep the amount of browser-specific
+commands (like alert) to a minimum so that you don’t spend
+time on them if you plan to concentrate on another environment
+(like Node.js).<br>
+<script><br>
+    alert( 'Hello, world!' );<br>
+ </script><br>
+So first, let’s see how we attach a script to a webpage.
+For server-side environments (like Node.js), you can execute
+the script with a command like "node my.js".
+</div>
+<div class="iable">
+Variable<br><br>
+A variable is a “named storage” for data. We can use variables
+ to store goodies, visitors, and other data. To create a
+variable in JavaScript, use the let keyword. The statement
+below creates (in other words: declares) a variable with the
+name “message”.<br>
+let message;
+</div>
+<div class="vari">
+Variable Declaration<br><br>
+Variable means anything that can vary. JavaScript includes
+variables which hold the data value and it can be changed
+anytime. JavaScript uses reserved keyword var to declare a
+variable. A variable must have a unique name. You can assign
+a value to a variable using equal to (=) operator when you
+declare it or before using it.<br>
+Syntax:<br>
+var <variable-name>;<br>
+var <variable-name> = <value>;<br>
+var total=0;<br>
+</div>
+<div class="able">
+Variable Scope<br><br>
+To work with JavaScript efficiently, one of the first things
+you need to understand is the concept of variable scope. The
+scope of a variable is controlled by the location of the
+variable declaration, and defines the part of the program
+where a particular variable is accessible. Scoping rules vary
+from language to language. JavaScript has two scopes – global
+and local. Any variable declared outside of a function belongs
+to the global scope, and is therefore accessible from anywhere
+in your code. Each function has its own scope, and any variable
+declared within that function is only accessible from that
+function and any nested functions. Because local scope in
+JavaScript is created by functions, it’s also called function
+scope. When we put a function inside another function, then we
+create nested scope. Currently, JavaScript, unlike many other
+languages, does not support block level scoping. This means
+that declaring a variable inside of a block structure like a
+for loop, does not restrict that variable to the loop.
+Instead, the variable will be accessible from the entire
+function. It’s worth noting that the upcoming ECMAScript 6
+will support block level scopes via the let keyword.
+</div>
+<script>
+$(".what").click(function(){
+       $("#column_right").html($(".you").html());
+});
+$(".java").click(function(){
+       $("#column_right").html($(".and").html());
+});
+$(".hello").click(function(){
+       $("#column_right").html($(".world").html());
+});
+$(".var").click(function(){
+       $("#column_right").html($(".iable").html());
+});
+$(".dec").click(function(){
+       $("#column_right").html($(".vari").html());
+});
+$(".scope").click(function(){
+       $("#column_right").html($(".able").html());
+});
+</script>
+</body>
+</html>

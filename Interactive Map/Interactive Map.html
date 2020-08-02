@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>Interactive Map</title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300italic,500);
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  text-align: center;
+  min-height: 140vh;
+  background: -moz-linear-gradient(top,  rgba(169,228,247,1) 0%, rgba(15,180,231,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(169,228,247,1) 0%,rgba(15,180,231,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(169,228,247,1) 0%,rgba(15,180,231,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9e4f7', endColorstr='#0fb4e7',GradientType=0 ); /* IE6-9 */
+  background-repeat: no-repeat;
+}
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 120px;
+  margin: 20px 0px;
+  font-weight: 100;
+}
+ul li {
+  list-style: none;
+  font-family: 'Ubuntu', sans-serif;
+  display: inline-block;
+  border: #fff solid 2px;
+  border-radius: 50px;
+  padding: 10px 0px;
+  margin: 5px;
+}
+li a{
+  text-decoration: none;
+  color: #fff;
+  transition: all 300ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+  padding: 10px 20px
+}
+li a:hover{
+  background: #fff;
+  color: #1db8e8;
+  border-radius: 50px;
+}
+ul{
+	text-align: center;
+}
+.list{
+	display: inline-block;
+	margin: 0 15px;
+}
+.container-map{
+	position:absolute;
+	width: 752px;
+	height: 502px;
+	top:500px;
+	left:0;
+	bottom:0;
+	right:0;
+	margin: auto;
+}
+.mappa,
+.mappa-transparent{
+    position: absolute;
+    top: 0px;
+    left: -3px;
+    width: 750px;
+    height: 444px;
+		mix-blend-mode:multiply;
+}
+.section-blue,
+.section-red,
+.section-yellow,
+.section-pink,
+.section-green {
+	display: none;
+	z-index:1;
+}
+#section{
+	fill: transparent;
+	z-index:2;
+	cursor: pointer;
+}
+.over{
+	background: #fff;
+  color: #1db8e8;
+  border-radius: 50px;
+}
+</style>
+</head>
+<body>
+<div class="container-button">
+<h1>Interactive Map</h1>
+<ul>
+<li class="list"><a href="#" class="button blue">Map-blue</a></li>
+<li class="list"><a href="#" class="button red">Map-red</a></li>
+<li class="list"><a href="#" class="button yellow">Map-yellow</a></li>
+<li class="list"><a href="#" class="button pink">Map-pink</a></li>
+<li class="list"><a href="#" class="button green">Map-green</a></li>
+</ul>
+</div>
+<div class="container-map">
+<img alt="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/163884/map-original.png">
+<svg class="mappa" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 623.5 442.79">
+<g class="section-blue">
+<path class="section-blue-1" d="M140.08,7l11.79,7L152,53.5,168.68,64l.49,76.17,5.5-.5-.33,2.33L196,129l27.67,15,2.5,1.83,4.33,4.33,16.67,10.17,4.67.5,5.17,4.83,38.67,22.5a12,12,0,0,0-3.67,9.17c.33,5.67,3.67,8.17,3.67,8.17l-16.5,9.5-27.33-16.83-.17,12.67,16,10-65,38.5L92,195.83l13-7.5V75l13.58-7.83s.46-49.08.13-49.08l14.21-8.92L133,2.54,136.33.88,140,2.21Z" transform="translate(-59.33 -0.88)" style="fill:#329ff9"/>
+<path class="section-blue-2" d="M82.67,202.67l108.67,63-23,13.33-109-62.67S83.33,202.67,82.67,202.67Z" transform="translate(-59.33 -0.88)" style="fill:#329ff9"/></g>
+<g class="section-red">
+<polygon class="section-red-2" points="153.17 126.46 246.83 180.96 250.5 180.13 224.33 84.96 153.17 126.46" style="fill:#fc5c30"/>
+<path class="section-red-1" d="M298,88.17l24.83,91.17s8.83,0,13.5,2.67l25.17-14.83.17-20.67,21.67-10.67L352.67,118l-1.33.83-6.33-4-2.83-3.17-1.67-.83-1.17.83-3.5-2.17.33-1.83L328,97.17l-6.83,4Z" transform="translate(-59.33 -0.88)" style="fill:#fc5c30"/></g>
+<path class="section-yellow" d="M347.13,189.13s3.44,1.31,3.44,8.31-3.41,7.91-3.41,7.91l20.55,12.2,13.27-11,2.26-26L385,206l23.75,24.75L409,241.5l83.75,48,5-2.25,20-33.5,9.5,16.25,43.38-24.75L469,186.75V98L443.25,82.75,415,98.5V149l-26.75-15.5-26.37,13.13.13,33.13Z" transform="translate(-59.33 -0.88)" style="fill:#fcee21"/>
+<path class="section-pink" d="M606,355.33l76.83-44.83L668,302V230.17l-28.33-16.33L591.08,243,591,257.42l-9.83-7-28.75,17.75-4.95-2.5-15,7.67-3.06-2-1.62-.17-10.5-17.42L497,288.38v16l-4.25-2.25-1.25,1.13-7.33-4.42-10.33,6.67-.17-1,.16-1.33-32.67-15.5.33-2.5L434.64,282l-2,.5-2.9-1.67L417.08,288,407,330V319.67L391.75,311,372,310v62.83l-21.65,11.83,103,59,44.54-26L473,400V385.5l37.38,25.33,84.38-49.17L579,353V341.67l-7,.33v-6.5ZM546.75,333.5,536,327V315l11.25,6.25Zm20.88,4.5H564v-4l-12.62.38.06-10.5,16.47,9.44Z" transform="translate(-59.33 -0.88)" style="fill:#f923f9"/>
+<path class="section-green" d="M306.58,212.17s5.46,2.17,14.63,2.17,7.9-.67,7.9-.67L331,211.5l2.35.83,1.67.17,1.17-.67,15.17,8.67,2.67-4,1.5-.5s4.17,3.17,5.67,7.17l19.67-16,2.5-27.17L385,206l23.75,24.75.25,23.58,2.33,1,2-.5,1.33.33,2.17,2.83,64.67,37.5-9.83,6.67-30.51-14.5.33-2.5L434.64,282l-2,.5-2.9-1.67-10.54,5.83-10.33-14.5L409,297l3.17,5H409l.17,12H411l-5,16V320l-14.5-9-19.62-1-.1,50-31.14,18.83-83.57-48.17L279,317.17V304l-33.75,19.83-65.87-38.17,58.56-34.17,42.53,25.33,13.18-6.67L249.83,244.5Z" transform="translate(-59.33 -0.88)" style="fill:#97ef30"/>
+</svg>
+<svg class="mappa-transparent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 623.5 442.79">
+<g id="section" class="hover blue">
+<path d="M140.08,7l11.79,7L152,53.5,168.68,64l.49,76.17,5.5-.5-.33,2.33L196,129l27.67,15,2.5,1.83,4.33,4.33,16.67,10.17,4.67.5,5.17,4.83,38.67,22.5a12,12,0,0,0-3.67,9.17c.33,5.67,3.67,8.17,3.67,8.17l-16.5,9.5-27.33-16.83-.17,12.67,16,10-65,38.5L92,195.83l13-7.5V75l13.58-7.83s.46-49.08.13-49.08l14.21-8.92L133,2.54,136.33.88,140,2.21Z" transform="translate(-59.33 -0.88)"/>
+<path d="M82.67,202.67l108.67,63-23,13.33-109-62.67S83.33,202.67,82.67,202.67Z" transform="translate(-59.33 -0.88)"/></g>
+<g id="section" class="hover red">
+<polygon points="153.17 126.46 246.83 180.96 250.5 180.13 224.33 84.96 153.17 126.46"/>
+<path d="M298,88.17l24.83,91.17s8.83,0,13.5,2.67l25.17-14.83.17-20.67,21.67-10.67L352.67,118l-1.33.83-6.33-4-2.83-3.17-1.67-.83-1.17.83-3.5-2.17.33-1.83L328,97.17l-6.83,4Z" transform="translate(-59.33 -0.88)"/></g>
+<path id="section" class="hover yellow" d="M347.13,189.13s3.44,1.31,3.44,8.31-3.41,7.91-3.41,7.91l20.55,12.2,13.27-11,2.26-26L385,206l23.75,24.75L409,241.5l83.75,48,5-2.25,20-33.5,9.5,16.25,43.38-24.75L469,186.75V98L443.25,82.75,415,98.5V149l-26.75-15.5-26.37,13.13.13,33.13Z" transform="translate(-59.33 -0.88)"/>
+<path id="section" class="hover pink" d="M606,355.33l76.83-44.83L668,302V230.17l-28.33-16.33L591.08,243,591,257.42l-9.83-7-28.75,17.75-4.95-2.5-15,7.67-3.06-2-1.62-.17-10.5-17.42L497,288.38v16l-4.25-2.25-1.25,1.13-7.33-4.42-10.33,6.67-.17-1,.16-1.33-32.67-15.5.33-2.5L434.64,282l-2,.5-2.9-1.67L417.08,288,407,330V319.67L391.75,311,372,310v62.83l-21.65,11.83,103,59,44.54-26L473,400V385.5l37.38,25.33,84.38-49.17L579,353V341.67l-7,.33v-6.5ZM546.75,333.5,536,327V315l11.25,6.25Zm20.88,4.5H564v-4l-12.62.38.06-10.5,16.47,9.44Z" transform="translate(-59.33 -0.88)"/>
+<path id="section" class="hover green" d="M306.58,212.17s5.46,2.17,14.63,2.17,7.9-.67,7.9-.67L331,211.5l2.35.83,1.67.17,1.17-.67,15.17,8.67,2.67-4,1.5-.5s4.17,3.17,5.67,7.17l19.67-16,2.5-27.17L385,206l23.75,24.75.25,23.58,2.33,1,2-.5,1.33.33,2.17,2.83,64.67,37.5-9.83,6.67-30.51-14.5.33-2.5L434.64,282l-2,.5-2.9-1.67-10.54,5.83-10.33-14.5L409,297l3.17,5H409l.17,12H411l-5,16V320l-14.5-9-19.62-1-.1,50-31.14,18.83-83.57-48.17L279,317.17V304l-33.75,19.83-65.87-38.17,58.56-34.17,42.53,25.33,13.18-6.67L249.83,244.5Z" transform="translate(-59.33 -0.88)"/>
+</svg>
+</div>
+<script>
+function highlight (selector){
+	$(selector).mouseenter(function(){
+	var classLink = $(this).attr('class').split(' ')[1];
+	$("." + classLink).addClass('over');
+	$(".section-" + classLink).stop().fadeIn();
+}).mouseleave(function(){
+	var classLink = $(this).attr('class').split(' ')[1];
+	$("." + classLink).removeClass('over');
+	$(".section-" + classLink).stop().fadeOut();
+});
+};
+highlight(".hover");
+highlight("li a");
+</script>
+</body>
+</html>

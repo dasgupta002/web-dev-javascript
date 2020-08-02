@@ -1,0 +1,37 @@
+.columns_left{
+    float: left;
+    width: 22%;
+}
+.columns_right{
+    float: left;
+    width: 60%;
+}
+.nama{
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 10px;
+    text-align: center;
+    height: 30px;
+}
+.button{
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 12px;
+}
+.chapter-thumbnail{
+    border: black;
+    border-radius: 4px;
+    overflow: auto;
+    height: 130px;
+}
+.pod{
+    font-weight: bold;
+    font-size: 17px;
+}
+#mainViewer{
+    padding-top: 33px;
+    padding-left: 44px;
+}

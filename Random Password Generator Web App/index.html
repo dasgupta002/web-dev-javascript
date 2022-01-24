@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Hash Generator</title>
+    <link rel = "stylesheet" href = "style.css">
+    <link rel = "stylesheet" 
+          href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+          integrity = "sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" 
+          crossorigin = "anonymous" 
+          referrerpolic y ="no-referrer">
+</head>
+<body>
+    <div class = "container">
+        <div class = "output">
+            <span id = "result"></span>
+            <button class = "btn" id = "copy">
+                <i class = "far fa-clipboard"></i>
+            </button>
+        </div>
+        <div class = "settings">
+            <div class = "input">
+                <label>Password length (Max: 20)</label>
+                <input type = "number" id = "length" min = "4" max = "20" value = "6">
+            </div>
+            <div class = "input">
+                <label>Include uppercase letters</label>
+                <input type = "checkbox" id = "uppercase" checked>
+            </div>
+            <div class = "input">
+                <label>Include lowercase letters</label>
+                <input type = "checkbox" id = "lowercase" checked>
+            </div>
+            <div class = "input">
+                <label>Include numbers</label>
+                <input type = "checkbox" id = "number" checked>
+            </div>
+            <div class = "input">
+                <label>Include symbols</label>
+                <input type = "checkbox" id = "symbol" checked>
+            </div>
+        </div>
+        <button class = "btn btn-large" id = "create">Generate hash!</button>
+    </div>
+
+    <script type = "text/javascript" src = "hash.js"></script>
+</body>
+</html>
